@@ -11,10 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        maingray: '#333333'
+        maingray: "#333333",
+        secondgray: "#2C2C2C",
+        secondWhite: "#F3F3F3",
+        thirdWhite: "#C8C8C8",
       },
       fontFamily: {
-        roboto: 'Roboto, sans-serif'
+        roboto: "Roboto, sans-serif",
       },
     },
   },

@@ -8,8 +8,8 @@ export const Navbar = () => {
   const [navActive, navActiveSet] = useState("main");
 
   return (
-    <header className="px-24 py-6 uppercase font-roboto flex flex-row items-center justify-between text-maingray">
-      <section className="flex flex-row items-center gap-2 select-none">
+    <header className="px-24 py-6 uppercase flex flex-row items-center justify-between text-maingray">
+      <section className="flex flex-row items-center gap-2 select-none tracking-wider">
         <div className=" font-black text-3xl ">CPX</div>
         <div className="text-3xl font-regular">ARCHITECTS</div>
       </section>

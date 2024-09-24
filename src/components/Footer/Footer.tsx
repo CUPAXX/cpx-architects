@@ -6,24 +6,26 @@ import {
   FaLinkedin,
   FaPinterestP,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
     <footer className="flex flex-col justify-between bg-secondgray w-full">
       <section className="text-secondWhite p-10 grid grid-cols-4">
-        <section className="font-black text-2xl tracking-wider">
+        <Link href={"/"} className="font-black text-2xl tracking-wider">
           <p>CPX</p>
           <p className="font-normal">Architects</p>
-        </section>
+        </Link>
         <section className="flex flex-col gap-5">
           <p className="pb-2">Information</p>
           {navData.map((res, i) => (
-            <nav
+            <Link
+              href={`/${res === "main" ? "" : res}`}
               className="capitalize text-xs cursor-pointer select-none w-fit"
               key={i}
             >
               {res}
-            </nav>
+            </Link>
           ))}
         </section>
         <section className="flex flex-col gap-5">

@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-roboto">
+      <body className="font-roboto relative">
         <Navbar />
         {children}
         <Footer />

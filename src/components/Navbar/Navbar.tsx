@@ -20,7 +20,7 @@ export const Navbar = () => {
   }, [pathname]);
 
   return (
-    <header className="px-24 py-6 uppercase flex flex-row items-center justify-between text-maingray">
+    <header className="px-24 py-6 uppercase flex flex-row items-center justify-between text-maingray z-20">
       <Link
         href="/"
         className="flex flex-row items-center gap-2 select-none tracking-wider"

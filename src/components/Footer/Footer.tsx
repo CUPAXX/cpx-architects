@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col justify-between bg-secondgray w-full">
+    <footer className="flex flex-col justify-between bg-secondgray w-full relative">
       <section className="text-secondWhite p-10 grid grid-cols-4">
         <Link href={"/"} className="font-black text-2xl tracking-wider">
           <p>CPX</p>
@@ -51,10 +51,18 @@ export const Footer = () => {
         <section className="flex flex-col gap-5">
           <p className="pb-2">Social Media</p>
           <div className="flex flex-row gap-10">
-            <FaFacebookF size={22} />
-            <FaTwitter size={22} />
-            <FaLinkedin size={22} />
-            <FaPinterestP size={22} />
+            <Link href={"https://www.instagram.com/xfiqryx/"}>
+              <FaFacebookF size={22} />
+            </Link>
+            <Link href={"https://www.instagram.com/xfiqryx/"}>
+              <FaTwitter size={22} />
+            </Link>
+            <Link href={"https://www.linkedin.com/in/fiqry-arahmansyah/"}>
+              <FaLinkedin size={22} />
+            </Link>
+            <Link href={"https://github.com/CUPAXX"}>
+              <FaPinterestP size={22} />
+            </Link>
           </div>
         </section>
       </section>

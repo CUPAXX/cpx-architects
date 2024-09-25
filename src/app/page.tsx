@@ -1,18 +1,35 @@
+"use client";
+
 import { MainBanner } from "@components/MainBanner/MainBanner";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
+import { contentModalAbout, Modal } from "@components/Modal/Modal";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div>
-      <MainBanner />
+  const [modalAbout, modalAboutSet] = useState(false);
 
+  const toogleModalAbout = () => {
+    modalAboutSet(!modalAbout);
+  };
+
+  return (
+    <div className="static">
+      <Modal
+        show={modalAbout}
+        onClose={toogleModalAbout}
+        onPressButton={toogleModalAbout}
+        btnLabel="go back"
+        mainContent={contentModalAbout}
+      />
+      <MainBanner />
       <section className="bg-thirdgray mx-24 mt-28 flex flex-row py-8 px-24 gap-10">
         <div className=" basis-7/12 relative">
           <div className="h-[17.5rem] w-[18rem] absolute">
             <Image
               src="/assets/gallery3.jpg"
               fill
+              sizes="100"
               alt="gallery image 3"
               quality={80}
               className="object-cover z-10"
@@ -22,6 +39,7 @@ export default function Home() {
             <Image
               src="/assets/gallery1.jpg"
               fill
+              sizes="100"
               alt="gallery image 1"
               quality={80}
               className="object-cover z-10"
@@ -31,6 +49,7 @@ export default function Home() {
             <Image
               src="/assets/gallery2.jpg"
               fill
+              sizes="100"
               alt="gallery image 2"
               quality={80}
               className="object-cover z-10"
@@ -47,12 +66,15 @@ export default function Home() {
             not only five centuries, but also the leap into electronic
             typesetting, remaining essentially unchanged.
           </p>
-          <div className="flex flex-row items-center mt-5 bg-white w-max py-6 pl-10 pr-20 gap-4 select-none text-maingray hover:bg-maingray hover:text-white hover:animate-pulse">
+          <button
+            onClick={toogleModalAbout}
+            className="flex flex-row items-center mt-5 bg-white w-max py-6 pl-10 pr-20 gap-4 select-none text-maingray hover:bg-maingray hover:text-white hover:animate-pulse"
+          >
             <div className="uppercase tracking-widest text-xs   ">
               read more
             </div>
             <HiArrowLongRight size={20} />
-          </div>
+          </button>
         </div>
       </section>
 

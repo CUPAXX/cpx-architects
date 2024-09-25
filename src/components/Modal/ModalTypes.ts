@@ -5,7 +5,7 @@ export interface ModalTypes {
   show: boolean;
   onClose: () => void;
   onPressButton: () => void;
-  mainContent: ReactNode;
+  children: ReactNode;
   mainContentStyle?: string;
   btnLabel: string;
 }

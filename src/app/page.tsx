@@ -3,7 +3,7 @@
 import { MainBanner } from "@components/MainBanner/MainBanner";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
-import { contentModalAbout, Modal } from "@components/Modal/Modal";
+import { ContentModalAbout, Modal } from "@components/Modal/Modal";
 import { useState } from "react";
 
 export default function Home() {
@@ -20,8 +20,9 @@ export default function Home() {
         onClose={toogleModalAbout}
         onPressButton={toogleModalAbout}
         btnLabel="go back"
-        mainContent={contentModalAbout}
-      />
+      >
+        <ContentModalAbout />
+      </Modal>
       <MainBanner />
       <section className="bg-thirdgray mx-24 mt-28 flex flex-row py-8 px-24 gap-10">
         <div className=" basis-7/12 relative">

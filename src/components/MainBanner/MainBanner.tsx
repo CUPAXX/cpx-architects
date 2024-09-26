@@ -8,10 +8,12 @@ import { bannerMaps } from "@maps/banner_maps";
 
 export const MainBanner = () => {
   const [activeId, activeIdSet] = useState(0);
+  const [isFade, isFadeSet] = useState(false);
 
   useInterval(() => {
     activeIdSet(activeId === bannerMaps.length - 1 ? 0 : activeId + 1);
-  }, 3000);
+    isFadeSet(false);
+  }, 4000);
 
   return (
     <div className="w-full h-[48rem] relative">
@@ -28,7 +30,10 @@ export const MainBanner = () => {
               placeholder="blur"
               blurDataURL={res.blurData}
               quality={80}
-              className="object-cover relative z-10"
+              onLoad={() => isFadeSet(true)}
+              className={`object-cover relative z-10 transition-all delay-300 duration-1000 ${
+                isFade ? "opacity-100" : "opacity-0"
+              }`}
             />
           );
         }

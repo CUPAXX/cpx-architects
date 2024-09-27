@@ -3,6 +3,7 @@
 import React, { FC, useEffect } from "react";
 import { ModalTypes } from "./ModalTypes";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Button } from "../Button/Button";
 
 export const Modal: FC<ModalTypes> = ({
   show,
@@ -35,12 +36,17 @@ export const Modal: FC<ModalTypes> = ({
         <main className={`${mainContentStyle} overflow-y-hidden`}>
           {children}
         </main>
-        <button
+        {/* <button
           className="bg-maingray text-thirdWhite text-xs uppercase tracking-widest py-3 w-1/2 my-8 hover:animate-pulse"
           onClick={onPressButton}
         >
           {btnLabel}
-        </button>
+        </button> */}
+        <Button
+          label={btnLabel}
+          onPress={onPressButton}
+          containerStyle="py-3 w-1/2 my-8"
+        />
       </section>
     </div>
   );

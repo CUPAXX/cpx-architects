@@ -10,7 +10,6 @@ export const MiniProjectCard = ({
   imageLabel,
   projectNameStyle,
 }: MiniProjectCardTypes) => {
-  console.log(projectNameStyle, "this is");
   return (
     <div className={`${containerStyle} w-full relative group`}>
       <div

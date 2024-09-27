@@ -15,6 +15,7 @@ const config: Config = {
         secondgray: "#2C2C2C",
         thirdgray: "#FBFBFB",
         fourthGray: "#BDBDBD",
+        fifthGray: "8D8D8D",
         secondWhite: "#F3F3F3",
         thirdWhite: "#C8C8C8",
       },

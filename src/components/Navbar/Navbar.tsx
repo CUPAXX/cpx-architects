@@ -46,11 +46,23 @@ const NavItem = ({ isActive, label, onPress }: NavItemType) => {
   return (
     <Link
       href={`/${label === "main" ? "" : label}`}
-      className={`text-sm cursor-pointer select-none border-maingray px-5 py-1 tracking-widest 
-        hover:animate-pulse ${isActive ? "border-y-2" : ""} `}
+      className={"cursor-pointer select-none border-maingray group"}
       onClick={() => onPress()}
     >
-      {label}
+      <div
+        className={`bg-maingray h-[1px] transition-all duration-500 group-hover:w-full ${
+          isActive ? "w-full" : "w-0"
+        }`}
+      />
+      <h3 className="text-sm tracking-widest px-5 py-1">{label}</h3>
+      <div className="relative">
+        <div
+          className={`h-full bg-white absolute top-0 left-0 transition-all duration-500 group-hover:w-0 ${
+            isActive ? "w-0" : "w-full"
+          }`}
+        />
+        <div className="bg-maingray h-[1px] w-full" />
+      </div>
     </Link>
   );
 };

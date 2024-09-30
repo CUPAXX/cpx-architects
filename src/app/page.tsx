@@ -2,7 +2,11 @@
 
 import { MainBanner } from "@components/MainBanner/MainBanner";
 import Image from "next/image";
-import { ContentModalAbout, Modal } from "@components/Modal/Modal";
+import {
+  ContentModalAbout,
+  Modal,
+  ContentModalSendEmail,
+} from "@components/Modal/Modal";
 import { useState } from "react";
 import { projectData } from "@/utils/DATA_MAPS/data_maps";
 import { MiniProjectCard } from "@components/ProjectCard/MiniProjectCard";
@@ -10,10 +14,12 @@ import { Button } from "@components/Button/Button";
 import { Input } from "@/components/Input/Input";
 
 export default function Home() {
-  const [modalAbout, modalAboutSet] = useState(false);
+  const [showModal, showModalSet] = useState(false);
+  const [modalSection, modalSectionSet] = useState("about");
 
-  const toogleModalAbout = () => {
-    modalAboutSet(!modalAbout);
+  const toogleModal = (section: string) => {
+    showModalSet(!showModal);
+    modalSectionSet(section);
   };
 
   const ProjectContent = () => {
@@ -50,12 +56,16 @@ export default function Home() {
   return (
     <div className="static">
       <Modal
-        show={modalAbout}
-        onClose={toogleModalAbout}
-        onPressButton={toogleModalAbout}
+        show={showModal}
+        onClose={() => toogleModal(modalSection)}
+        onPressButton={() => toogleModal(modalSection)}
         btnLabel="go back"
       >
-        <ContentModalAbout />
+        {modalSection === "about" ? (
+          <ContentModalAbout />
+        ) : (
+          <ContentModalSendEmail show={showModal} />
+        )}
       </Modal>
       <MainBanner />
 
@@ -105,7 +115,7 @@ export default function Home() {
           </p>
           <Button
             label="read more"
-            onPress={toogleModalAbout}
+            onPress={() => toogleModal("about")}
             showArrow={true}
             type="white"
             containerStyle="mt-5 py-6 pl-10 pr-20"
@@ -184,7 +194,7 @@ export default function Home() {
         </div>
         <Button
           label="send email"
-          onPress={() => {}}
+          onPress={() => toogleModal("send email")}
           showArrow={true}
           containerStyle="py-6 px-10 self-start mt-10"
         />

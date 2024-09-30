@@ -19,7 +19,7 @@ export const Button = ({
           : "hover:bg-thirdWhite bg-maingray hover:text-maingray text-thirdWhite"
       }
           ${containerStyle}
-        flex flex-row items-center justify-center gap-4 select-none transition-all duration-200 rounded-sm
+        flex flex-row items-center justify-center gap-4 select-none rounded-sm
         `}
     >
       <div className="uppercase tracking-widest text-xs">{label}</div>

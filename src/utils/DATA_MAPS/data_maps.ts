@@ -77,4 +77,72 @@ export const projectData = [
   },
 ];
 
+export const galleryData = [
+  {
+    id: 1,
+    label: "image 1",
+    image: "/assets/gallery1.jpg",
+  },
+  {
+    id: 2,
+    label: "image 2",
+    image: "/assets/gallery2.jpg",
+  },
+  {
+    id: 3,
+    label: "image 3",
+    image: "/assets/gallery3.jpg",
+  },
+  {
+    id: 4,
+    label: "image 4",
+    image: "/assets/gallery4.jpg",
+  },
+  {
+    id: 5,
+    label: "image 5",
+    image: "/assets/gallery5.jpg",
+  },
+  {
+    id: 6,
+    label: "image 6",
+    image: "/assets/gallery6.jpg",
+  },
+  {
+    id: 7,
+    label: "image 7",
+    image: "/assets/gallery7.jpg",
+  },
+  {
+    id: 8,
+    label: "image 8",
+    image: "/assets/gallery8.jpg",
+  },
+  {
+    id: 9,
+    label: "image 9",
+    image: "/assets/gallery9.jpg",
+  },
+  {
+    id: 10,
+    label: "image 10",
+    image: "/assets/gallery10.jpg",
+  },
+  // {
+  //   id: 11,
+  //   label: "image 11",
+  //   image: "/assets/main-banner.jpg",
+  // },
+  // {
+  //   id: 12,
+  //   label: "image 12",
+  //   image: "/assets/main-banner2.jpg",
+  // },
+  // {
+  //   id: 13,
+  //   label: "image 13",
+  //   image: "/assets/main-banner3.jpg",
+  // },
+];
+
 // <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'

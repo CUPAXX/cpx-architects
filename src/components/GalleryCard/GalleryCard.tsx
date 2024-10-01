@@ -135,7 +135,7 @@ export const GalleryCard = ({ imageData }: { imageData: galleryImageData }) => {
       </div>
       <div
         onClick={() => handleFullscreen(imageData.id)}
-        className="h-72 w-full relative cursor-pointer"
+        className="h-64 w-full relative cursor-pointer"
       >
         <Image
           src={imageData.image}

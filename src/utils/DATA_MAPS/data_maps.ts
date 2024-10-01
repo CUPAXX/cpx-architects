@@ -128,21 +128,61 @@ export const galleryData = [
     label: "image 10",
     image: "/assets/gallery10.jpg",
   },
-  // {
-  //   id: 11,
-  //   label: "image 11",
-  //   image: "/assets/main-banner.jpg",
-  // },
-  // {
-  //   id: 12,
-  //   label: "image 12",
-  //   image: "/assets/main-banner2.jpg",
-  // },
-  // {
-  //   id: 13,
-  //   label: "image 13",
-  //   image: "/assets/main-banner3.jpg",
-  // },
+  {
+    id: 11,
+    label: "image 11",
+    image: "/assets/main-banner.jpg",
+  },
+  {
+    id: 12,
+    label: "image 12",
+    image: "/assets/main-banner2.jpg",
+  },
+  {
+    id: 13,
+    label: "image 13",
+    image: "/assets/main-banner3.jpg",
+  },
+  {
+    id: 14,
+    label: "image 14",
+    image: "/assets/gallery6.jpg",
+  },
+  {
+    id: 15,
+    label: "image 15",
+    image: "/assets/gallery7.jpg",
+  },
+  {
+    id: 16,
+    label: "image 16",
+    image: "/assets/gallery8.jpg",
+  },
+  {
+    id: 17,
+    label: "image 17",
+    image: "/assets/gallery9.jpg",
+  },
+  {
+    id: 18,
+    label: "image 18",
+    image: "/assets/gallery2.jpg",
+  },
+  {
+    id: 19,
+    label: "image 19",
+    image: "/assets/gallery3.jpg",
+  },
+  {
+    id: 20,
+    label: "image 20",
+    image: "/assets/gallery4.jpg",
+  },
+  {
+    id: 21,
+    label: "image 21",
+    image: "/assets/gallery5.jpg",
+  },
 ];
 
 // <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'

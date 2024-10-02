@@ -12,10 +12,12 @@ import { projectData } from "@/utils/DATA_MAPS/data_maps";
 import { MiniProjectCard } from "@components/ProjectCard/MiniProjectCard";
 import { Button } from "@components/Button/Button";
 import { Input } from "@/components/Input/Input";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [showModal, showModalSet] = useState(false);
   const [modalSection, modalSectionSet] = useState("about");
+  const router = useRouter();
 
   const toogleModal = (section: string) => {
     showModalSet(!showModal);
@@ -159,7 +161,7 @@ export default function Home() {
 
         <Button
           label="all projects"
-          onPress={() => {}}
+          onPress={() => router.push("/projects")}
           showArrow={true}
           containerStyle="mt-5 py-6 px-10 self-end"
         />

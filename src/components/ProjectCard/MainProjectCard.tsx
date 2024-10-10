@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../Button/Button";
 import Image from "next/image";
 import { ProjectCardTypes } from "./ProjectCardTypes";
+import { defaultBlurImage } from "@/utils/DATA_MAPS/data_maps";
 
 export const MainProjectCard = ({ projectData, onPress }: ProjectCardTypes) => {
   return (
@@ -10,7 +11,9 @@ export const MainProjectCard = ({ projectData, onPress }: ProjectCardTypes) => {
         <Image
           src={projectData.image}
           fill
-          sizes="100"
+          sizes="100%"
+          placeholder="blur"
+          blurDataURL={defaultBlurImage}
           alt={projectData.imageLabel}
           quality={80}
           className="object-cover"

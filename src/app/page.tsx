@@ -8,7 +8,7 @@ import {
   ContentModalSendEmail,
 } from "@components/Modal/Modal";
 import { useState } from "react";
-import { projectData } from "@/utils/DATA_MAPS/data_maps";
+import { defaultBlurImage, projectData } from "@/utils/DATA_MAPS/data_maps";
 import { MiniProjectCard } from "@components/ProjectCard/MiniProjectCard";
 import { Button } from "@components/Button/Button";
 import { Input } from "@/components/Input/Input";
@@ -78,7 +78,9 @@ export default function Home() {
             <Image
               src="/assets/gallery3.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 3"
               quality={80}
               className="object-cover z-10"
@@ -88,7 +90,9 @@ export default function Home() {
             <Image
               src="/assets/gallery1.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 1"
               quality={80}
               className="object-cover z-10"
@@ -98,7 +102,9 @@ export default function Home() {
             <Image
               src="/assets/gallery2.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 2"
               quality={80}
               className="object-cover z-10"
@@ -168,7 +174,10 @@ export default function Home() {
       </section>
 
       {/* Contact Us section */}
-      <section className="my-28 mx-24 text-fourthGray flex flex-col">
+      <section
+        id="contact-us-section"
+        className="my-28 mx-24 text-fourthGray flex flex-col"
+      >
         <h1 className="capitalize text-6xl font-light">Contact Us</h1>
         <div className="grid grid-cols-5 gap-5 my-5">
           <form className="col-span-2 flex flex-col gap-3">
@@ -187,7 +196,9 @@ export default function Home() {
             <Image
               src="/assets/cs.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 1"
               quality={80}
               className="object-cover z-10 object-top scale-x-[-1]"

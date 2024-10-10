@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
-import { galleryData } from "@/utils/DATA_MAPS/data_maps";
+import { defaultBlurImage, galleryData } from "@/utils/DATA_MAPS/data_maps";
 import { galleryImageData } from "./galleryTypes";
 
 export const GalleryCard = ({ imageData }: { imageData: galleryImageData }) => {
@@ -116,9 +116,11 @@ export const GalleryCard = ({ imageData }: { imageData: galleryImageData }) => {
               <Image
                 src={activeData?.image}
                 fill
-                sizes="100"
+                sizes="100%"
+                placeholder="blur"
+                blurDataURL={defaultBlurImage}
                 alt={activeData.label}
-                quality={50}
+                quality={80}
                 className="object-contain z-10"
               />
             )}
@@ -140,7 +142,9 @@ export const GalleryCard = ({ imageData }: { imageData: galleryImageData }) => {
         <Image
           src={imageData.image}
           fill
-          sizes="100"
+          sizes="100%"
+          placeholder="blur"
+          blurDataURL={defaultBlurImage}
           alt={imageData.label}
           quality={80}
           className="object-cover z-10 object-top select-none"

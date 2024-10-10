@@ -1,5 +1,7 @@
 export const navData = ["main", "gallery", "projects", "contacts"];
 
+export const defaultBlurImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNsrAcAAYcBArSMKU4AAAAASUVORK5CYII="
+
 export const contactData = {
   address:
     "Jl. Walet 6, Blok I.2 No. 11 Sector 2, Bintaro Jaya, 12330, RW.8, Rengas, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 12330",
@@ -196,5 +198,3 @@ export const galleryData = [
     image: "/assets/gallery5.jpg",
   },
 ];
-
-// <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'

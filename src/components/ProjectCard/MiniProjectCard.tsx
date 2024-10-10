@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { MiniProjectCardTypes } from "./ProjectCardTypes";
+import { defaultBlurImage } from "@/utils/DATA_MAPS/data_maps";
 
 export const MiniProjectCard = ({
   projectName,
@@ -31,7 +32,9 @@ export const MiniProjectCard = ({
       <Image
         src={image}
         fill
-        sizes="100"
+        sizes="100%"
+        placeholder="blur"
+        blurDataURL={defaultBlurImage}
         alt={imageLabel}
         quality={80}
         className="object-cover z-10"

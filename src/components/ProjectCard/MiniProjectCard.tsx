@@ -2,13 +2,12 @@ import Image from "next/image";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { MiniProjectCardTypes } from "./ProjectCardTypes";
 import { defaultBlurImage } from "@/utils/DATA_MAPS/data_maps";
+import Link from "next/link";
 
 export const MiniProjectCard = ({
-  projectName,
-  image,
+  projectData,
   containerStyle,
   overlayStyle,
-  imageLabel,
   projectNameStyle,
 }: MiniProjectCardTypes) => {
   return (
@@ -19,23 +18,28 @@ export const MiniProjectCard = ({
         <h1
           className={`${projectNameStyle}text-white font-bold max-w-96 opacity-0 transition-all duration-500 group-hover:opacity-100`}
         >
-          {projectName}
+          {projectData.projectName}
         </h1>
-        <button className="uppercase text-xs text-white tracking-widest -translate-y-10 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 mt-3 flex flex-row items-center gap-4">
+        <Link
+          href={{
+            pathname: `/projects/${projectData.id}`,
+          }}
+          className="uppercase text-xs text-white tracking-widest -translate-y-10 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 mt-3 flex flex-row items-center gap-4"
+        >
           <h1>View more</h1>
           <HiArrowLongRight
             size={20}
             className="transition-all duration-500 delay-200 -translate-x-10 group-hover:translate-x-0"
           />
-        </button>
+        </Link>
       </div>
       <Image
-        src={image}
+        src={projectData.image}
         fill
         sizes="100%"
         placeholder="blur"
         blurDataURL={defaultBlurImage}
-        alt={imageLabel}
+        alt={projectData.imageLabel}
         quality={80}
         className="object-cover z-10"
       />

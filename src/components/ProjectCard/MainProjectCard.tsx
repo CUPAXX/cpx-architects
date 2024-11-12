@@ -35,7 +35,9 @@ export const MainProjectCard = ({ projectData }: ProjectCardTypes) => {
             containerStyle="py-6 pl-10 pr-16"
           /> */}
           <Link
-            href={`/projects/${projectData.id}`}
+            href={{
+              pathname: `/projects/${projectData.id}`,
+            }}
             className="hover:bg-thirdWhite bg-maingray hover:text-maingray max-w-fit text-thirdWhite uppercase tracking-widest text-xs py-5 px-10"
           >
             view more

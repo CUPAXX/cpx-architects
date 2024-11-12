@@ -51,11 +51,7 @@ const Page = () => {
       <section className=" flex flex-col justify-between">
         <div className="grid grid-cols-1 py-5 gap-10">
           {projectData.slice(offset, offset + limit).map((res) => (
-            <MainProjectCard
-              key={res.id}
-              projectData={res}
-              onPress={() => {}}
-            />
+            <MainProjectCard key={res.id} projectData={res} />
           ))}
         </div>
         <div className="flex flex-row gap-3 mt-8">

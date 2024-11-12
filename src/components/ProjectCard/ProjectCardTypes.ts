@@ -1,10 +1,8 @@
-export interface MiniProjectCardTypes {
+export interface MiniProjectDataTypes {
   projectName: string;
   image: string;
-  containerStyle?: string;
-  overlayStyle?: string;
   imageLabel: string;
-  projectNameStyle?: string;
+  id: number;
 }
 
 export interface ProjectDataTypes {
@@ -20,6 +18,12 @@ export interface ProjectDataTypes {
 }
 
 export interface ProjectCardTypes {
-  onPress: () => void;
   projectData: ProjectDataTypes;
+}
+
+export interface MiniProjectCardTypes {
+  containerStyle?: string;
+  projectNameStyle?: string;
+  overlayStyle?: string;
+  projectData: MiniProjectDataTypes;
 }

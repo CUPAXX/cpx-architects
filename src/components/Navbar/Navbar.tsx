@@ -18,7 +18,7 @@ export const Navbar = () => {
       navActiveSet(pathname.slice(1).split("/")[0]);
     }
   }, [pathname]);
-  console.log(pathname);
+
   return (
     <header className="px-24 py-6 uppercase flex flex-row items-center justify-between text-maingray z-20">
       <Link

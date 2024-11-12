@@ -31,9 +31,7 @@ export default function Home() {
         components.push(
           <MiniProjectCard
             key={projectData[i].id}
-            image={projectData[i].image}
-            imageLabel={projectData[i].imageLabel}
-            projectName={projectData[i].projectName}
+            projectData={projectData[i]}
             containerStyle="h-72"
             overlayStyle="px-10 py-14 text-5xl"
           />
@@ -42,9 +40,7 @@ export default function Home() {
         components.push(
           <MiniProjectCard
             key={projectData[i].id}
-            image={projectData[i].image}
-            imageLabel={projectData[i].imageLabel}
-            projectName={projectData[i].projectName}
+            projectData={projectData[i]}
             containerStyle="col-span-2 h-72"
             overlayStyle="px-20 py-16 text-6xl"
           />

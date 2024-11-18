@@ -1,18 +1,27 @@
 "use client";
 
 import { MainBanner } from "@components/MainBanner/MainBanner";
-import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
-import { ContentModalAbout, Modal } from "@components/Modal/Modal";
+import {
+  ContentModalAbout,
+  Modal,
+  ContentModalSendEmail,
+} from "@components/Modal/Modal";
 import { useState } from "react";
-import { projectData } from "@/utils/DATA_MAPS/data_maps";
-import { MiniProjectCard } from "@/components/ProjectCard/MiniProjectCard";
+import { defaultBlurImage, projectData } from "@/utils/DATA_MAPS/data_maps";
+import { MiniProjectCard } from "@components/ProjectCard/MiniProjectCard";
+import { Button } from "@components/Button/Button";
+import { Input } from "@/components/Input/Input";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [modalAbout, modalAboutSet] = useState(false);
+  const [showModal, showModalSet] = useState(false);
+  const [modalSection, modalSectionSet] = useState("about");
+  const router = useRouter();
 
-  const toogleModalAbout = () => {
-    modalAboutSet(!modalAbout);
+  const toogleModal = (section: string) => {
+    showModalSet(!showModal);
+    modalSectionSet(section);
   };
 
   const ProjectContent = () => {
@@ -22,9 +31,7 @@ export default function Home() {
         components.push(
           <MiniProjectCard
             key={projectData[i].id}
-            image={projectData[i].image}
-            imageLabel={projectData[i].imageLabel}
-            projectName={projectData[i].projectName}
+            projectData={projectData[i]}
             containerStyle="h-72"
             overlayStyle="px-10 py-14 text-5xl"
           />
@@ -33,9 +40,7 @@ export default function Home() {
         components.push(
           <MiniProjectCard
             key={projectData[i].id}
-            image={projectData[i].image}
-            imageLabel={projectData[i].imageLabel}
-            projectName={projectData[i].projectName}
+            projectData={projectData[i]}
             containerStyle="col-span-2 h-72"
             overlayStyle="px-20 py-16 text-6xl"
           />
@@ -49,12 +54,16 @@ export default function Home() {
   return (
     <div className="static">
       <Modal
-        show={modalAbout}
-        onClose={toogleModalAbout}
-        onPressButton={toogleModalAbout}
+        show={showModal}
+        onClose={() => toogleModal(modalSection)}
+        onPressButton={() => toogleModal(modalSection)}
         btnLabel="go back"
       >
-        <ContentModalAbout />
+        {modalSection === "about" ? (
+          <ContentModalAbout />
+        ) : (
+          <ContentModalSendEmail show={showModal} />
+        )}
       </Modal>
       <MainBanner />
 
@@ -65,7 +74,9 @@ export default function Home() {
             <Image
               src="/assets/gallery3.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 3"
               quality={80}
               className="object-cover z-10"
@@ -75,7 +86,9 @@ export default function Home() {
             <Image
               src="/assets/gallery1.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 1"
               quality={80}
               className="object-cover z-10"
@@ -85,7 +98,9 @@ export default function Home() {
             <Image
               src="/assets/gallery2.jpg"
               fill
-              sizes="100"
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
               alt="gallery image 2"
               quality={80}
               className="object-cover z-10"
@@ -102,15 +117,13 @@ export default function Home() {
             not only five centuries, but also the leap into electronic
             typesetting, remaining essentially unchanged.
           </p>
-          <button
-            onClick={toogleModalAbout}
-            className="flex flex-row items-center mt-5 bg-white w-max py-6 pl-10 pr-20 gap-4 select-none text-maingray hover:bg-maingray transition-all duration-200 hover:text-white"
-          >
-            <div className="uppercase tracking-widest text-xs   ">
-              read more
-            </div>
-            <HiArrowLongRight size={20} />
-          </button>
+          <Button
+            label="read more"
+            onPress={() => toogleModal("about")}
+            showArrow={true}
+            type="white"
+            containerStyle="mt-5 py-6 pl-10 pr-20"
+          />
         </div>
       </section>
 
@@ -142,33 +155,58 @@ export default function Home() {
       </section>
 
       {/* Project section */}
-      <section className="my-28 mx-24 text-fourthGray">
+      <section className="my-28 mx-24 text-fourthGray flex flex-col">
         <h1 className="capitalize text-6xl font-light">Our Projects</h1>
         <div className="grid grid-cols-4 gap-4 mt-10">
           <ProjectContent />
-          {/* <div className="col-span-2 w-full h-72 relative group">
-            <div className="absolute z-20 bg-maingray w-full h-full opacity-0 transition-all duration-200 group-hover:opacity-80 px-20 py-16">
-              <h1 className="text-white text-6xl font-bold max-w-36">
-                Sample Project
-              </h1>
-              <button className="uppercase text-xs text-white tracking-widest -translate-y-10 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 mt-3 flex flex-row items-center gap-4">
-                <h1>View more</h1>
-                <HiArrowLongRight
-                  size={20}
-                  className="transition-all duration-500 delay-200 -translate-x-10 group-hover:translate-x-0"
-                />
-              </button>
-            </div>
-            <Image
-              src="/assets/main-banner2.jpg"
-              fill
-              sizes="100"
-              alt="gallery image 2"
-              quality={80}
-              className="object-cover z-10"
-            />
-          </div> */}
         </div>
+
+        <Button
+          label="all projects"
+          onPress={() => router.push("/projects")}
+          showArrow={true}
+          containerStyle="mt-5 py-6 px-10 self-end"
+        />
+      </section>
+
+      {/* Contact Us section */}
+      <section
+        id="contact-us-section"
+        className="my-28 mx-24 text-fourthGray flex flex-col"
+      >
+        <h1 className="capitalize text-6xl font-light">Contact Us</h1>
+        <div className="grid grid-cols-5 gap-5 my-5">
+          <form className="col-span-2 flex flex-col gap-3">
+            <Input label="name" type="text" />
+            <Input label="phone number" type="tel" isRequired={true} />
+            <Input label="e-mail" type="email" isRequired={true} />
+            <Input label="Interested In" type="text" />
+            <textarea
+              placeholder="message"
+              rows={4}
+              required
+              className="invalid:text-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-600 placeholder:text-fifthGray h-full text-maingray text-sm placeholder:capitalize px-4 py-4 bg-secondWhite w-full focus:ring-1 focus:ring-maingray focus:border  focus:outline-none focus:border-maingray"
+            />
+          </form>
+          <div className="h-96 w-full relative col-span-3">
+            <Image
+              src="/assets/cs.jpg"
+              fill
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={defaultBlurImage}
+              alt="gallery image 1"
+              quality={80}
+              className="object-cover z-10 object-top scale-x-[-1]"
+            />
+          </div>
+        </div>
+        <Button
+          label="send email"
+          onPress={() => toogleModal("send email")}
+          showArrow={true}
+          containerStyle="py-6 px-10 self-start mt-10"
+        />
       </section>
     </div>
   );

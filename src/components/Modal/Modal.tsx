@@ -3,12 +3,13 @@
 import React, { FC, useEffect } from "react";
 import { ModalTypes } from "./ModalTypes";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
+import { Button } from "../Button/Button";
 
 export const Modal: FC<ModalTypes> = ({
   show,
   onClose,
   onPressButton,
-  mainContentStyle,
   btnLabel,
   children,
 }) => {
@@ -19,28 +20,30 @@ export const Modal: FC<ModalTypes> = ({
       document.body.classList.remove("overflow-hidden");
     }
   }, [show]);
-
   return (
     <div
-      className={`bg-black/40 fixed w-full h-full z-50 backdrop-blur-md backdrop-brightness-15 flex items-center justify-center top-0 ${
-        !show ? "hidden" : "flex"
+      className={`bg-black/40 fixed w-full h-full flex backdrop-blur-md backdrop-brightness-15 items-center justify-center top-0  ${
+        !show ? "invisible -z-50" : "visible z-50"
       }`}
     >
-      <section className="w-max max-w-[60rem] h-max max-h-[90vh] bg-white px-2 py-2 flex flex-col items-center rounded-sm">
+      <section
+        className={`w-max max-w-[60rem] h-max max-h-[90vh] bg-white px-2 py-2 flex flex-col items-center rounded-sm duration-300 ${
+          show
+            ? "opacity-100 scale-100 transition-all"
+            : "opacity-0 scale-0 transition-none"
+        }`}
+      >
         <IoCloseCircleOutline
           onClick={onClose}
           size={30}
-          className="text-maingray opacity-60 hover:opacity-100 cursor-pointer self-end"
+          className="text-maingray opacity-60 hover:opacity-100 cursor-pointer self-end "
         />
-        <main className={`${mainContentStyle} overflow-y-hidden`}>
-          {children}
-        </main>
-        <button
-          className="bg-maingray text-thirdWhite text-xs uppercase tracking-widest py-3 w-1/2 my-8 hover:animate-pulse"
-          onClick={onPressButton}
-        >
-          {btnLabel}
-        </button>
+        {children}
+        <Button
+          label={btnLabel}
+          onPress={onPressButton}
+          containerStyle="py-3 w-1/2 my-8"
+        />
       </section>
     </div>
   );
@@ -84,6 +87,33 @@ export const ContentModalAbout = () => {
           remaining essentially unchanged..
         </p>
       </article>
+    </div>
+  );
+};
+
+export const ContentModalSendEmail = ({ show = false }: { show: boolean }) => {
+  console.log("this is", show);
+  return (
+    <div className="px-10 py-8">
+      <header className="mb-10 flex flex-col items-center justify-center gap-8">
+        <div
+          className={`border border-gray-300 p-5 rounded-full duration-500 ${
+            show
+              ? "opacity-100 scale-10 transition-all"
+              : "opacity-0 scale-0 transition-none"
+          }`}
+        >
+          <FaCheck
+            className={`bg-mainGreen p-4 text-8xl rounded-full text-white transition-all duration-700 delay-200 ${
+              show ? "scale-100 " : "scale-150"
+            }`}
+          />
+        </div>
+        <h1 className="font-bold text-2xl text-maingray">Thank you !</h1>
+      </header>
+      <p className="font-medium text-secondgray">
+        Your message has been sent, we will contact you shortly
+      </p>
     </div>
   );
 };

@@ -1,10 +1,8 @@
 <h1 align='center'>CPX Architects - Profile Company</h1>
   <p align="center">
-    <a href="">View Demo</a>
+    <a href="https://cpx-architect-static.netlify.app">View Demo</a>
     ·
-    <a href="">Report Bug</a>
-    ·
-    <a href="">Request Feature</a>
+    <a href="https://github.com/CUPAXX/cpx-architects/issues">Report Bug</a>
   </p>
 
 # About The Project
@@ -47,6 +45,10 @@ How to run the project:
   <li>Detail Project</li>
   <li>Contact pages</li>
 </ul>
+
+## Status Deploy
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e7fee60b-ed4f-436b-99a8-20f7ebad19dd/deploy-status)](https://app.netlify.com/sites/cpx-architect-static/deploys)
 
 ## License
 

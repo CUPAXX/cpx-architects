@@ -33,8 +33,9 @@ See full design here:
 How to run the project:
 
 1. Open project directory in Terminal or comand line
-2. Type `npm install` or `yarn install`
-3. Type `npm run dev`
+2. Type `npm install` or `yarn install` to install dependency
+3. Type `npm run dev` to run projects
+4. open <a href="http://localhost:3000">http://localhost:3000</a> in browser to see the result
 
 ## Feature
 

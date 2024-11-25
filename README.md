@@ -16,6 +16,7 @@ this application is made using Next Js (App Router) v14 as a framework and Tailw
 
 [![Next Js. v14](https://img.shields.io/badge/nextjs-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/docs)
 [![Tailwind CSS. v3](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/docs)
+[![Node Js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 
 ## Design
 
@@ -25,8 +26,8 @@ See full design here:
 
 ## Requirements
 
-1. <a href="https://nodejs.org/en/download/">Node Js</a>
-2. Node_modules `npm install` or `yarn install`
+1. <a href="https://nodejs.org/en/download/">Node Js v18</a>
+2. Project Dependency (Node_modules)
 
 ## Getting Started
 

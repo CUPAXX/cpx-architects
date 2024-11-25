@@ -1,10 +1,8 @@
 <h1 align='center'>CPX Architects - Profile Company</h1>
   <p align="center">
-    <a href="">View Demo</a>
+    <a href="https://cpx-architect-static.netlify.app">View Demo</a>
     ·
-    <a href="">Report Bug</a>
-    ·
-    <a href="">Request Feature</a>
+    <a href="https://github.com/CUPAXX/cpx-architects/issues">Report Bug</a>
   </p>
 
 # About The Project
@@ -18,6 +16,7 @@ this application is made using Next Js (App Router) v14 as a framework and Tailw
 
 [![Next Js. v14](https://img.shields.io/badge/nextjs-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/docs)
 [![Tailwind CSS. v3](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/docs)
+[![Node Js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 
 ## Design
 
@@ -27,16 +26,17 @@ See full design here:
 
 ## Requirements
 
-1. <a href="https://nodejs.org/en/download/">Node Js</a>
-2. Node_modules `npm install` or `yarn install`
+1. <a href="https://nodejs.org/en/download/">Node Js v18</a>
+2. Project Dependency (Node_modules)
 
 ## Getting Started
 
 How to run the project:
 
 1. Open project directory in Terminal or comand line
-2. Type `npm install` or `yarn install`
-3. Type `npm run dev`
+2. Type `npm install` or `yarn install` to install dependency
+3. Type `npm run dev` to run projects
+4. open <a href="http://localhost:3000">http://localhost:3000</a> in browser to see the result
 
 ## Feature
 
@@ -47,6 +47,10 @@ How to run the project:
   <li>Detail Project</li>
   <li>Contact pages</li>
 </ul>
+
+## Status Deploy
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e7fee60b-ed4f-436b-99a8-20f7ebad19dd/deploy-status)](https://app.netlify.com/sites/cpx-architect-static/deploys)
 
 ## License
 

@@ -16,28 +16,30 @@ export const MainBanner = () => {
   }, 4000);
 
   return (
-    <div className="w-full h-[48rem] relative">
-      <div className="bg-white absolute h-full w-full z-20 opacity-20" />
-      {bannerMaps.map((res) => {
-        if (res.id === activeId) {
-          return (
-            <Image
-              key={res.id}
-              src={res.path}
-              fill
-              sizes="100vw"
-              alt={res.label}
-              placeholder="blur"
-              blurDataURL={res.blurData}
-              quality={80}
-              onLoad={() => isFadeSet(true)}
-              className={`object-cover relative z-10 transition-all delay-300 duration-1000 ${
-                isFade ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          );
-        }
-      })}
+    <div className="static">
+      <div className="w-full h-[48rem]  relative">
+        <div className="bg-white absolute h-full w-full z-20 opacity-20" />
+        {bannerMaps.map((res) => {
+          if (res.id === activeId) {
+            return (
+              <Image
+                key={res.id}
+                src={res.path}
+                fill
+                sizes="100vw"
+                alt={res.label}
+                placeholder="blur"
+                blurDataURL={res.blurData}
+                quality={80}
+                onLoad={() => isFadeSet(true)}
+                className={`object-cover relative z-10 transition-all delay-300 duration-1000 ${
+                  isFade ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            );
+          }
+        })}
+      </div>
     </div>
   );
 };

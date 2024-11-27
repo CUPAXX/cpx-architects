@@ -68,7 +68,7 @@ export default function Home() {
       <MainBanner />
 
       {/* About us section */}
-      <section className="bg-thirdgray mx-24 mt-28 flex flex-row py-8 px-24 gap-10">
+      {/* <section className="bg-thirdgray mx-24 mt-28 flex flex-row py-8 px-24 gap-10">
         <div className=" basis-7/12 relative">
           <div className="h-[17.5rem] w-[18rem] absolute">
             <Image
@@ -125,10 +125,10 @@ export default function Home() {
             containerStyle="mt-5 py-6 pl-10 pr-20"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Main Focus section */}
-      <section className="mt-56 mx-24 text-fourthGray">
+      {/* <section className="mt-56 mx-24 text-fourthGray">
         <h1 className="capitalize text-6xl font-light">
           main focus/mission statement
         </h1>
@@ -152,10 +152,10 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Project section */}
-      <section className="my-28 mx-24 text-fourthGray flex flex-col">
+      {/* <section className="my-28 mx-24 text-fourthGray flex flex-col">
         <h1 className="capitalize text-6xl font-light">Our Projects</h1>
         <div className="grid grid-cols-4 gap-4 mt-10">
           <ProjectContent />
@@ -167,10 +167,10 @@ export default function Home() {
           showArrow={true}
           containerStyle="mt-5 py-6 px-10 self-end"
         />
-      </section>
+      </section> */}
 
       {/* Contact Us section */}
-      <section
+      {/* <section
         id="contact-us-section"
         className="my-28 mx-24 text-fourthGray flex flex-col"
       >
@@ -207,7 +207,7 @@ export default function Home() {
           showArrow={true}
           containerStyle="py-6 px-10 self-start mt-10"
         />
-      </section>
+      </section> */}
     </div>
   );
 }

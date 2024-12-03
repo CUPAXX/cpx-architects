@@ -17,8 +17,8 @@ export const MainBanner = () => {
 
   return (
     <div className="static">
-      <div className="w-full h-dvh md:h-[48rem]  relative">
-        <div className="bg-white absolute h-dvh md:h-full w-full z-20 opacity-20" />
+      <div className="w-full h-96 md:h-[48rem] relative">
+        <div className="bg-white absolute h-full w-full z-20 opacity-20" />
         {bannerMaps.map((res) => {
           if (res.id === activeId) {
             return (

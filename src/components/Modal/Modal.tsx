@@ -27,7 +27,7 @@ export const Modal: FC<ModalTypes> = ({
       }`}
     >
       <section
-        className={`w-max max-w-[60rem] h-max max-h-[90vh] bg-white px-2 py-2 flex flex-col items-center rounded-sm duration-300 ${
+        className={`w-fit mx-5 my-5 md:mx-10 md:my-10  lg:max-w-[60rem] h-fit lg:max-h-[90vh] bg-white px-2 py-2 flex flex-col items-center rounded-sm duration-300 ${
           show
             ? "opacity-100 scale-100 transition-all"
             : "opacity-0 scale-0 transition-none"
@@ -35,14 +35,13 @@ export const Modal: FC<ModalTypes> = ({
       >
         <IoCloseCircleOutline
           onClick={onClose}
-          size={30}
-          className="text-maingray opacity-60 hover:opacity-100 cursor-pointer self-end "
+          className="text-maingray opacity-60 hover:opacity-100 cursor-pointer self-end text-xl md:text-3xl"
         />
         {children}
         <Button
           label={btnLabel}
           onPress={onPressButton}
-          containerStyle="py-3 w-1/2 my-8"
+          containerStyle="py-3 w-1/2 my-4 lg:my-8"
         />
       </section>
     </div>
@@ -51,12 +50,16 @@ export const Modal: FC<ModalTypes> = ({
 
 export const ContentModalAbout = () => {
   return (
-    <div className="px-24 py-8">
-      <header className="mb-10">
-        <h1 className="text-5xl text-fourthGray font-light">About</h1>
-        <h1 className="text-5xl text-maingray font-bold">Us</h1>
+    <div className="px-2 py-2 md:px-12 lg:px-24 md:py-8">
+      <header className="mb-2 md:mb-10">
+        <h1 className=" text-2xl md:text-4xl lg:text-5xl text-fourthGray font-light">
+          About
+        </h1>
+        <h1 className=" text-2xl md:text-4xl lg:text-5xl text-maingray font-bold">
+          Us
+        </h1>
       </header>
-      <article className="flex flex-col gap-5 text-xs">
+      <article className="flex flex-col gap-5 text-[10px] md:text-xs">
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry&apos;s standard dummy text

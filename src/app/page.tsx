@@ -68,48 +68,53 @@ export default function Home() {
       <MainBanner />
 
       {/* About us section */}
-      {/* <section className="bg-thirdgray mx-24 mt-28 flex flex-row py-8 px-24 gap-10">
-        <div className=" basis-7/12 relative">
-          <div className="h-[17.5rem] w-[18rem] absolute">
-            <Image
-              src="/assets/gallery3.jpg"
-              fill
-              sizes="100%"
-              placeholder="blur"
-              blurDataURL={defaultBlurImage}
-              alt="gallery image 3"
-              quality={80}
-              className="object-cover z-10"
-            />
-          </div>
-          <div className="h-[10rem] w-[18rem] absolute -bottom-24">
-            <Image
-              src="/assets/gallery1.jpg"
-              fill
-              sizes="100%"
-              placeholder="blur"
-              blurDataURL={defaultBlurImage}
-              alt="gallery image 1"
-              quality={80}
-              className="object-cover z-10"
-            />
-          </div>
-          <div className="h-[22.5rem] w-[19rem] absolute right-0 top-6">
-            <Image
-              src="/assets/gallery2.jpg"
-              fill
-              sizes="100%"
-              placeholder="blur"
-              blurDataURL={defaultBlurImage}
-              alt="gallery image 2"
-              quality={80}
-              className="object-cover z-10"
-            />
+      <section className="bg-thirdgray mx-5 mt-10 md:mx-10 xl:mx-24 md:mt-12 lg:mt-28 flex flex-col lg:flex-row py-8 px-5 lg:px-10 2xl:px-24 lg:gap-10 2xl:gap-14">
+        <div className="lg:basis-7/12">
+          <div className="relative h-60 xs:h-[20rem] md:h-[25rem] xl:h-full">
+            <div className="h-24 xs:h-32 md:h-[13rem] xl:h-[15rem] w-28 xs:w-36 md:w-[20rem] lg:w-[14rem] xl:w-[16rem] absolute">
+              <Image
+                src="/assets/gallery3.jpg"
+                fill
+                sizes="100%"
+                placeholder="blur"
+                blurDataURL={defaultBlurImage}
+                alt="gallery image 3"
+                quality={80}
+                layout=""
+                className="object-cover z-10"
+              />
+            </div>
+            <div className="h-16 xs:h-20 md:h-[8rem] xl:h-[9rem] w-28 xs:w-36 md:w-[16rem] lg:w-[14rem] xl:w-[16rem] absolute bottom-16 xs:bottom-20 md:bottom-8 lg:bottom-10 xl:-bottom-16">
+              <Image
+                src="/assets/gallery1.jpg"
+                fill
+                sizes="100%"
+                placeholder="blur"
+                blurDataURL={defaultBlurImage}
+                alt="gallery image 1"
+                quality={80}
+                className="object-cover z-10"
+              />
+            </div>
+            <div className="h-52 xs:h-72 md:h-[23rem] lg:h-[21rem] xl:h-[21rem] w-36 xs:w-44 md:w-[17rem] lg:w-[14rem] xl:w-[18rem] absolute right-0 xl:top-6">
+              <Image
+                src="/assets/gallery2.jpg"
+                fill
+                sizes="100%"
+                placeholder="blur"
+                blurDataURL={defaultBlurImage}
+                alt="gallery image 2"
+                quality={80}
+                className="object-cover z-10"
+              />
+            </div>
           </div>
         </div>
-        <div className="basis-5/12">
-          <div className=" text-6xl text-fourthGray font-light">About</div>
-          <p className="py-8 text-maingray">
+        <div className="lg:basis-5/12">
+          <div className="text-4xl md:text-5xl lg:text-6xl text-fourthGray font-light">
+            About
+          </div>
+          <p className="text-xs md:text-base py-4 lg:py-8 text-maingray">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since the 1500s, when an unknown printer took a galley of
@@ -119,13 +124,16 @@ export default function Home() {
           </p>
           <Button
             label="read more"
-            onPress={() => toogleModal("about")}
+            onPress={() => {
+              toogleModal("about");
+              console.log("masuk");
+            }}
             showArrow={true}
             type="white"
             containerStyle="mt-5 py-6 pl-10 pr-20"
           />
         </div>
-      </section> */}
+      </section>
 
       {/* Main Focus section */}
       {/* <section className="mt-56 mx-24 text-fourthGray">

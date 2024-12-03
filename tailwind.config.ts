@@ -23,6 +23,9 @@ const config: Config = {
       fontFamily: {
         roboto: "Roboto, sans-serif",
       },
+      screens: {
+        xs: "400px",
+      },
     },
   },
   plugins: [],

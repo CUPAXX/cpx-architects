@@ -34,7 +34,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className=" uppercase md:relative w-full fixed z-40 h-full">
+    <header className={`uppercase md:relative w-full fixed z-40 `}>
       <div className="xl:px-24 xl:py-6 md:px-10 md:py-6 px-4 py-3 bg-white w-full drop-shadow-md flex flex-row items-center justify-between text-maingray">
         <Link
           href="/"
@@ -69,23 +69,21 @@ export const Navbar = () => {
           />
         )}
       </div>
-      <section className="absolute md:hidden w-full h-full ">
-        <div
-          className={`bg-maingray h-full transition-all duration-500 flex flex-col justify-center gap-10 items-center ${
-            isShow ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          {navData.map((res, i) => (
-            <NavItemMobile
-              key={i}
-              isActive={res === navActive}
-              onPress={() => onPressMobileItem(res)}
-              label={res}
-              show={isShow}
-              even={i % 2 == 0}
-            />
-          ))}
-        </div>
+      <section
+        className={`absolute md:hidden transition-all duration-500 w-full h-dvh flex flex-col justify-center gap-10 items-center bg-maingray ${
+          isShow ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {navData.map((res, i) => (
+          <NavItemMobile
+            key={i}
+            isActive={res === navActive}
+            onPress={() => onPressMobileItem(res)}
+            label={res}
+            show={isShow}
+            even={i % 2 == 0}
+          />
+        ))}
       </section>
     </header>
   );
